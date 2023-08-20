@@ -52,7 +52,7 @@ La plantilla que se define creará una VPC, y un servicio web escalable mediante
 
         cdk deploy
 
-    Siguiendo el asistente, se podrá realizar un seguimiento de cómo se despliegan los recursos definidos en la plantilla generada.
+    Siguiendo el asistente, se podrá realizar un seguimiento de cómo se despliegan los recursos definidos en la plantilla generada. Tras el despliegue, aparecerá como salida el nombre DNS del punto de enlace del servicio. Bastará con abrir una ventana de un navegador y acceder por HTTP (no HTTPS) a dicho punto de enlace.
 
 10. Para eliminar los recursos, se ejecuta la orden:
 
