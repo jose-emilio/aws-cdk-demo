@@ -62,7 +62,7 @@ class CdkDemoStack(Stack):
             description="Rol para conectar instancias EC2 a AWS SSM"
         )
 
-        ec2role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("policy/AmazonSSMManagedInstanceCore"))
+        ec2role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSSMManagedInstanceCore"))
 
         group = asg.AutoScalingGroup(
                 self,
