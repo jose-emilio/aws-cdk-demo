@@ -5,6 +5,8 @@ Las plantillas de AWS CloudFormation utilizan un formato basado en YAML o JSON p
 
 En este repositorio se muestra cómo se puede definir una plantilla de AWS CloudFormation y desplegar una pila a partir de dicha plantilla, empleando el framework de AWS CDK para Python.
 
+La plantilla que se define creará una VPC, y un servicio web escalable mediante un grupo de Autoescalado de EC2, con instancias administradas por AWS Systems Manager tras un balanceador de carga de aplicación.
+
 ## **Requerimientos**
 * Disponer de una cuenta de AWS
 * Disponer de Python instalado con soporte para entornos virtuales (venv)
