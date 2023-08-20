@@ -52,7 +52,7 @@ class CdkDemoStack(Stack):
             open=True
         )
 
-        with open("./userdata.sh") as fichero:
+        with open("./cdk_demo/userdata.sh") as fichero:
             userdata = fichero.read()
 
         ec2role = iam.Role(
@@ -69,10 +69,9 @@ class CdkDemoStack(Stack):
                 "ASG",
                 vpc=self.vpc,
                 instance_type=ec2.InstanceType.of(ec2.InstanceClass.BURSTABLE4_GRAVITON,ec2.InstanceSize.MICRO),
-                vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PRIVATE_WITH_NAT),
+                vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS),
                 machine_image=ec2.MachineImage.from_ssm_parameter('/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-arm64-gp2'),
                 min_capacity=2,
-                desired_capacity=4,
                 max_capacity=6,
                 user_data=ec2.UserData.custom(userdata),
                 role=ec2role,
